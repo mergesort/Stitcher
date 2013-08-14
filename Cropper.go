@@ -16,7 +16,7 @@ func CropCenter(filePath string) {
 	x0 := (sourceImage.Bounds().Size().X - squareSide) / 2
 	y0 := (sourceImage.Bounds().Size().Y - squareSide) / 2
 
-	croppedPath := fmt.Sprintf("%s-cropped", filePath)
+	croppedPath := fmt.Sprintf("Cropped-%s", filePath)
 	cropTo640Squared(sourceImage, croppedPath, x0, y0)
 }
 
@@ -26,7 +26,7 @@ func CropFromTop(filePath string) {
 	x0 := 0
 	y0 := 0
 
-	croppedPath := fmt.Sprintf("%s-cropped", filePath)
+	croppedPath := fmt.Sprintf("Cropped-%s", filePath)
 	cropTo640Squared(sourceImage, croppedPath, x0, y0)
 }
 
@@ -36,7 +36,7 @@ func CropFromBottom(filePath string) {
 	x0 := sourceImage.Bounds().Size().X - squareSide
 	y0 := sourceImage.Bounds().Size().Y - squareSide
 
-	croppedPath := fmt.Sprintf("%s-cropped", filePath)
+	croppedPath := fmt.Sprintf("Cropped-%s", filePath)
 	cropTo640Squared(sourceImage, croppedPath, x0, y0)
 }
 
