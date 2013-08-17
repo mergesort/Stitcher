@@ -10,9 +10,7 @@ const (
 	squareSide = 640
 )
 
-func CropCenter(filePath string) {
-	sourceImage, _ := imaging.Open(filePath)
-
+func CropCenter(sourceImage image.Image) {
 	x0 := (sourceImage.Bounds().Size().X - squareSide) / 2
 	y0 := (sourceImage.Bounds().Size().Y - squareSide) / 2
 
@@ -20,9 +18,7 @@ func CropCenter(filePath string) {
 	cropTo640Squared(sourceImage, croppedPath, x0, y0)
 }
 
-func CropFromTop(filePath string) {
-	sourceImage, _ := imaging.Open(filePath)
-
+func CropFromTop(sourceImage image.Image) {
 	x0 := 0
 	y0 := 0
 
@@ -30,9 +26,7 @@ func CropFromTop(filePath string) {
 	cropTo640Squared(sourceImage, croppedPath, x0, y0)
 }
 
-func CropFromBottom(filePath string) {
-	sourceImage, _ := imaging.Open(filePath)
-
+func CropFromBottom(sourceImage image.Image) {
 	x0 := sourceImage.Bounds().Size().X - squareSide
 	y0 := sourceImage.Bounds().Size().Y - squareSide
 
