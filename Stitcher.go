@@ -1,7 +1,6 @@
 package Stitcher
 
 import (
-	"fmt"
 	"github.com/disintegration/imaging"
 	"image"
 	"image/color"
@@ -32,8 +31,7 @@ func StitchImages(images []image.Image) image.Image {
 
 		croppedImage := CropCenter(currImage)
 		resizedImage := imaging.Resize(croppedImage, imageWidth, imageHeight, imaging.CatmullRom)
-		fmt.Println(resizedImage.Bounds(), image.Pt(x, y))
-		imaging.Overlay(newImage, resizedImage, image.Pt(x, y), 1.0)
+		newImage = imaging.Paste(newImage, resizedImage, image.Pt(x, y))
 	}
 
 	return newImage
