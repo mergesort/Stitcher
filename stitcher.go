@@ -6,10 +6,16 @@ import (
 	"image/color"
 )
 
+///////////////////////////////////////////////////////////////////////////////
+// Constants
+
 const (
 	stitchedImageHeight = 320
 	stitchedImageWidth  = 640
 )
+
+///////////////////////////////////////////////////////////////////////////////
+// Public functions
 
 func StitchImages(images []image.Image) image.Image {
 	imageCount := len(images)
