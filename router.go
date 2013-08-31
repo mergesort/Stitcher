@@ -2,6 +2,7 @@ package Stitcher
 
 import (
 	"encoding/json"
+	"fmt"
 	"github.com/mergesort/Response"
 	"io/ioutil"
 	"net/http"
